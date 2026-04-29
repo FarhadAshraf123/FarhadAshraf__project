@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Practice</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 30px; }
+    h2 { margin-top: 30px; }
+    .done { text-decoration: line-through; color: gray; }
+  </style>
+</head>
+<body>
+
+  
+  <h2>1. Dynamic List</h2>
+  <input type="text" id="listInput" placeholder="Enter item">
+  <button onclick="addItem()">Add</button>
+  <ul id="myList"></ul>
+
+  
+  <h2>2. To-Do List</h2>
+  <input type="text" id="todoInput" placeholder="Enter task">
+  <button onclick="addTask()">Add</button>
+  <ul id="todoList"></ul>
+
+
+  <h2>3. Toggle Button</h2>
+  <button onclick="toggle()">Toggle</button>
+  <p id="status">OFF</p>
+
+  <script>
+
+    
+    function addItem() {
+      const val = document.getElementById("listInput").value;
+      const li = document.createElement("li");
+      li.textContent = val;
+      document.getElementById("myList").appendChild(li);
+    }
+
+    
+    function addTask() {
+      const val = document.getElementById("todoInput").value;
+      const li = document.createElement("li");
+      li.textContent = val;
+      li.onclick = function() { li.classList.toggle("done"); };
+      document.getElementById("todoList").appendChild(li);
+    }
+
+    
+    let isOn = false;
+    function toggle() {
+      isOn = !isOn;
+      document.getElementById("status").textContent = isOn ? "ON" : "OFF";
+    }
+
+  </script>
+
+</body>
+</html>

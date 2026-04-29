@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Validation</title>
+  <style>
+    body { font-family: Arial, sans-serif; display: flex; justify-content: center; padding: 50px; }
+    input { display: block; margin: 8px 0; padding: 8px; width: 250px; }
+    .error { color: red; font-size: 13px; }
+    button { margin-top: 10px; padding: 8px 20px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h2>Login</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <p class="error" id="u-error"></p>
+
+    <input type="password" id="password" placeholder="Password">
+    <p class="error" id="p-error"></p>
+
+    <button onclick="validate()">Login</button>
+    <p id="success" style="color:green;"></p>
+  </div>
+
+  <script>
+    function validate() {
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+
+      document.getElementById("u-error").textContent = "";
+      document.getElementById("p-error").textContent = "";
+      document.getElementById("success").textContent = "";
+
+      if (u === "") {
+        document.getElementById("u-error").textContent = "Username is required.";
+      } else if (u.length < 4) {
+        document.getElementById("u-error").textContent = "Min 4 characters.";
+      }
+
+      if (p === "") {
+        document.getElementById("p-error").textContent = "Password is required.";
+      } else if (p.length < 6) {
+        document.getElementById("p-error").textContent = "Min 6 characters.";
+      }
+
+      if (u.length >= 4 && p.length >= 6) {
+        document.getElementById("success").textContent = "Login Successful!";
+      }
+    }
+  </script>
+
+</body>
+</html>

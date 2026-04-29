@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Live Preview</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 60px; }
+    input { padding: 8px; font-size: 1rem; width: 250px; }
+  </style>
+</head>
+<body>
+
+  <input type="text" oninput="showPreview(this.value)" placeholder="Type something..."/>
+  <p id="preview"></p>
+
+  <script>
+    function showPreview(value) {
+      document.getElementById('preview').innerText = value;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<form id="myForm">
+  <input type="text" id="username" placeholder="Enter name">
+  <button type="submit">Submit</button>
+</form>
+
+<p id="error"></p>
+
+<script>
+  const form = document.getElementById("myForm");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); 
+
+    const username = document.getElementById("username").value;
+    const error = document.getElementById("error");
+
+    if (username === "") {
+      error.textContent = "Username is required!";
+    } else {
+      error.textContent = "Form submitted successfully!";
+    }
+});
+</script>

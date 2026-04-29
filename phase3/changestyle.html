@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Text</title>
+    
+</head>
+<body>
+        <div>
+            <p id="text">Hello, World!</p>
+            <button onclick="changeStyle()">Change Style</button>
+        </div>
+        <script>
+            function changeStyle() {
+                var textElement = document.getElementById("text");
+                textElement.style.color = "blue";
+                textElement.style.fontSize = "20px";
+            }
+        </script>
+</html>

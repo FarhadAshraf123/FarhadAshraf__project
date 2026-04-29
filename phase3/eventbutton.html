@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Button Click</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 60px; }
+    button { padding: 8px 20px; font-size: 1rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <p id="text">Hello!</p>
+  <button onclick="changeText()">Click Me</button>
+
+  <script>
+    function changeText() {
+      document.getElementById('text').innerText = 'Button was clicked!';
+    }
+  </script>
+
+</body>
+</html>

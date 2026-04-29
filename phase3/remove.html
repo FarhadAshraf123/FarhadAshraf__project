@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Text</title>
+    
+</head>
+<body>
+        <input type="button" value="add text" onclick="addText()">
+        <input type="button" value="remove text" onclick="removeText()">
+        <script>
+            var heading = document.createElement("h1");
+            function addText() {
+                heading.innerText = "good morning";
+                document.body.appendChild(heading);
+            }
+            function removeText() {
+                document.body.removeChild(heading);
+            }
+        </script>
