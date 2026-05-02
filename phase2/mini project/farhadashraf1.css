@@ -19,7 +19,7 @@
     flex-direction: column;
   }
 
-  /* NAV */
+
   nav {
     background: var(--black);
     display: flex;
